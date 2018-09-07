@@ -2,6 +2,8 @@
 
 [Chinese README](README-zh_CN.md)
 
+[ScreenShots](resource/ScreenShot.md)
+
 ## Install
 
 Install by Yarn:
@@ -23,7 +25,7 @@ npm install --save react-native-general-searchbar
 Import the module in the file:
 
 ```javascript
-import SearchBar from 'react-native-general-searchbar;
+import SearchBar from 'react-native-general-searchbar';
 ```
 
 It has several properties to control its behavior:
@@ -45,7 +47,7 @@ It has several properties to control its behavior:
 Import the module in the file:
 
 ```javascript
-import { FakeSearchBar } from 'react-native-general-searchbar;
+import { FakeSearchBar } from 'react-native-general-searchbar';
 ```
 
 Properties:

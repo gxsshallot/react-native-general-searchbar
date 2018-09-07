@@ -1,5 +1,7 @@
 # react-native-general-searchbar
 
+[实际截图](resource/ScreenShot.md)
+
 ## 安装
 
 使用Yarn安装:
@@ -21,7 +23,7 @@ npm install --save react-native-general-searchbar
 在文件中导入模块:
 
 ```javascript
-import SearchBar from 'react-native-general-searchbar;
+import SearchBar from 'react-native-general-searchbar';
 ```
 
 有几个属性来控制组件的行为:
@@ -43,7 +45,7 @@ import SearchBar from 'react-native-general-searchbar;
 在文件中导入模块:
 
 ```javascript
-import { FakeSearchBar } from 'react-native-general-searchbar;
+import { FakeSearchBar } from 'react-native-general-searchbar';
 ```
 
 属性:
