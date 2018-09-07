@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 
 export default class extends React.Component {
     static propTypes = {
-        autoFocus: PropTypes.bool, // 是否自动focus
-        searchText: PropTypes.string, // 搜索栏中的文字
-        placeholder: PropTypes.string, // 占位文字
-        canCancel: PropTypes.bool, // 是否有取消按钮
-        canClear: PropTypes.bool, // 是否有清空输入按钮
-        isSearching: PropTypes.bool, // 是否处于搜索中状态
-        onPressCancel: PropTypes.func, // 取消操作
-        onSubmitEditing: PropTypes.func, // 提交编辑
-        onChangeText: PropTypes.func, // 文字变更
-        textInputProps: PropTypes.any, // 内部TextInput的属性
+        autoFocus: PropTypes.bool,
+        searchText: PropTypes.string,
+        placeholder: PropTypes.string,
+        canCancel: PropTypes.bool,
+        canClear: PropTypes.bool,
+        isSearching: PropTypes.bool,
+        onPressCancel: PropTypes.func,
+        onSubmitEditing: PropTypes.func,
+        onChangeText: PropTypes.func,
+        textInputProps: PropTypes.any,
         style: PropTypes.any,
     };
 

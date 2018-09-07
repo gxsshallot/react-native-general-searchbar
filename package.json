@@ -2,7 +2,7 @@
     "name": "react-native-general-searchbar",
     "version": "1.0.0",
     "private": false,
-    "description": "",
+    "description": "A general search bar and fake search bar.",
     "main": "index.js",
     "repository": {
       "type": "git",
@@ -18,8 +18,5 @@
       "url": "https://github.com/gaoxiaosong/react-native-general-searchbar/issues",
       "email": "gaoxiaosong06@gmail.com"
     },
-    "homepage": "https://github.com/gaoxiaosong/react-native-general-searchbar#readme",
-    "dependencies": {
-      "pinyin": "^2.8.3"
-    }
+    "homepage": "https://github.com/gaoxiaosong/react-native-general-searchbar#readme"
   }
