@@ -4,6 +4,8 @@
 
 [ScreenShots](resource/ScreenShot.md)
 
+A general search bar and clickable fake search bar.
+
 ## Install
 
 Install by Yarn:

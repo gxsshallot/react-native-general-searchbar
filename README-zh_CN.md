@@ -2,6 +2,8 @@
 
 [实际截图](resource/ScreenShot.md)
 
+一个通用的搜索栏和伪搜索栏.
+
 ## 安装
 
 使用Yarn安装:
