@@ -36,6 +36,7 @@ It has several properties to control its behavior:
 * `searchText?: string`: Current text display.
 * `placeholder?: string`: Placeholder text.
 * `canCancel?: boolean`: Has cancel button or not.
+* `cancelText?: string`: Cancel button text.
 * `canClear?: boolean`: Has clear input button or not.
 * `isSearching?: boolean`: Is in searching status or not.
 * `onPressCancel?: () => void`: Cancel button callback.
