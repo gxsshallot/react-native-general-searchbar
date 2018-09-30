@@ -8,6 +8,7 @@ export default class extends React.Component {
         searchText: PropTypes.string,
         placeholder: PropTypes.string,
         canCancel: PropTypes.bool,
+        cancelText: PropTypes.string,
         canClear: PropTypes.bool,
         isSearching: PropTypes.bool,
         onPressCancel: PropTypes.func,
@@ -23,6 +24,7 @@ export default class extends React.Component {
             searchText: '',
             placeholder: '',
             canCancel: false,
+            cancelText: '取消',
             canClear: false,
             isSearching: true,
         };
@@ -86,7 +88,7 @@ export default class extends React.Component {
                 }}
             >
                 <Text style={styles.cancelText}>
-                    取消
+                    {this.props.cancelText}
                 </Text>
             </TouchableOpacity>
         );

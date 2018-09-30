@@ -34,6 +34,7 @@ import SearchBar from 'react-native-general-searchbar';
 * `searchText: string`: 当前展示的文本.
 * `placeholder: string`: 占位文本.
 * `canCancel: boolean`: 有没有取消按钮.
+* `cancelText: string`: 取消按钮文本.
 * `canClear: boolean`: 有没有清空输入按钮.
 * `isSearching: boolean`: 是否处于搜索中状态.
 * `onPressCancel: () => void`: 取消按钮的回调方法.
