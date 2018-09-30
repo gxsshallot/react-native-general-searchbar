@@ -1,6 +1,6 @@
 {
     "name": "react-native-general-searchbar",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": false,
     "description": "A general search bar and clickable fake search bar.",
     "main": "index.js",
