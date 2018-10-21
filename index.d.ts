@@ -18,7 +18,7 @@ export interface FakeSearchBarProps {
     touchStyle?: StyleProp<ViewStyle>,
     imageStyle?: StyleProp<ImageStyle>,
     textStyle?: StyleProp<TextStyle>,
-};
+}
 
 export class FakeSearchBar extends React.PureComponent<FakeSearchBarProps> {
 }
@@ -39,7 +39,7 @@ export interface SearchBarProps {
     onChangeText?: (text?: string) => void,
     textInputProps?: TextInputProps,
     style?: StyleProp<ViewStyle>,
-};
+}
 
 export default class SearchBar extends React.PureComponent<SearchBarProps> {
 }
