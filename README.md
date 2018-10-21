@@ -60,7 +60,7 @@ It has several properties to control its behavior:
 * `autoFocus?: boolean`: Inner `TextInput` component will auto focus or not.
 * `searchText?: string`: Current text display.
 * `placeholder?: string`: Placeholder text.
-* `placeholderTextColor: string`: Placeholder text color.
+* `placeholderTextColor?: string`: Placeholder text color.
 * `canCancel?: boolean`: Has cancel button or not.
 * `cancelText?: string`: Cancel button text.
 * `canClear?: boolean`: Has clear input button or not.

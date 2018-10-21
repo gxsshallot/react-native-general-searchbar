@@ -57,17 +57,17 @@ import SearchBar from 'react-native-general-searchbar';
 
 * `autoFocus?: boolean`: 内部`TextInput`组件自动Focus与否.
 * `searchText?: string`: 当前展示的文本.
-* `placeholder: string`: 占位文本.
-* `placeholderTextColor: string`: 占位文本颜色.
-* `canCancel: boolean`: 有没有取消按钮.
-* `cancelText: string`: 取消按钮文本.
-* `canClear: boolean`: 有没有清空输入按钮.
-* `isSearching: boolean`: 是否处于搜索中状态.
-* `onPressCancel: () => void`: 取消按钮的回调方法.
-* `onSubmitEditing: (event) => void`: 当提交编辑文本时的回调方法.
-* `onChangeText: (text: string) => void`: 当前输入文本改变的回调方法.
-* `textInputProps: any`: 内部`TextInput`组件的属性.
-* `style: any`: 外部视图样式.
+* `placeholder?: string`: 占位文本.
+* `placeholderTextColor?: string`: 占位文本颜色.
+* `canCancel?: boolean`: 有没有取消按钮.
+* `cancelText?: string`: 取消按钮文本.
+* `canClear?: boolean`: 有没有清空输入按钮.
+* `isSearching?: boolean`: 是否处于搜索中状态.
+* `onPressCancel?: () => void`: 取消按钮的回调方法.
+* `onSubmitEditing?: (event) => void`: 当提交编辑文本时的回调方法.
+* `onChangeText?: (text: string) => void`: 当前输入文本改变的回调方法.
+* `textInputProps?: any`: 内部`TextInput`组件的属性.
+* `style?: any`: 外部视图样式.
 
 ### FakeSearchBar
 
