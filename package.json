@@ -1,22 +1,27 @@
 {
-    "name": "react-native-general-searchbar",
-    "version": "1.0.1",
-    "private": false,
-    "description": "A general search bar and clickable fake search bar.",
-    "main": "index.js",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/gaoxiaosong/react-native-general-searchbar"
-    },
-    "keywords": [
-      "React-Native",
-      "SearchBar"
-    ],
-    "author": "Xiaosong Gao",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/gaoxiaosong/react-native-general-searchbar/issues",
-      "email": "gaoxiaosong06@gmail.com"
-    },
-    "homepage": "https://github.com/gaoxiaosong/react-native-general-searchbar#readme"
+  "name": "react-native-general-searchbar",
+  "version": "1.0.2",
+  "private": false,
+  "description": "A general search bar and clickable fake search bar.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaoxiaosong/react-native-general-searchbar.git"
+  },
+  "keywords": [
+    "React-Native",
+    "SearchBar"
+  ],
+  "author": "Xiaosong Gao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaoxiaosong/react-native-general-searchbar/issues",
+    "email": "gaoxiaosong06@gmail.com"
+  },
+  "homepage": "https://github.com/gaoxiaosong/react-native-general-searchbar#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   }
+}

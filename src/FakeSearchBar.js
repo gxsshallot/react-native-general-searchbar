@@ -1,24 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Image, Text, StyleSheet } from 'react-native';
-import PropTypes from 'prop-types';
 
-export default class extends React.Component {
-    static propTypes = {
-        placeholder: PropTypes.string,
-        onFocus: PropTypes.func,
-        image: PropTypes.any,
-        activeOpacity: PropTypes.number,
-        touchStyle: PropTypes.any,
-        imageStyle: PropTypes.any,
-        textStyle: PropTypes.any,
+export default class extends React.PureComponent {
+    static defaultProps = {
+        image: require('./image/input_search.png'),
+        activeOpacity: 0.9,
     };
-
-    static get defaultProps() {
-        return {
-            image: require('../image/input_search.png'),
-            activeOpacity: 0.9,
-        };
-    }
 
     render() {
         const {

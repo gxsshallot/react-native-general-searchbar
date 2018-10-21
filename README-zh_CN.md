@@ -1,8 +1,28 @@
 # react-native-general-searchbar
 
-[实际截图](resource/ScreenShot.md)
-
 一个通用的搜索栏和伪搜索栏.
+
+## 实际截图
+
+### iPhoneX ( SearchBar + FakeSearchBar)
+
+<p float="left">
+
+<img src="/resource/SearchBar-iPhoneX.png" width="25%">
+
+<img src="/resource/FakeSearchBar-iPhoneX.png" width="25%">
+
+</p>
+
+### Android ( SearchBar + FakeSearchBar)
+
+<p float="left">
+
+<img src="/resource/SearchBar-Android.jpeg" width="25%">
+
+<img src="/resource/FakeSearchBar-Android.jpeg" width="25%">
+
+</p>
 
 ## 安装
 
@@ -18,6 +38,11 @@ yarn add react-native-general-searchbar
 npm install --save react-native-general-searchbar
 ```
 
+你应该同样安装来自`peerDependencies`的依赖库:
+
+* react
+* react-native
+
 ## 使用
 
 ### SearchBar
@@ -30,9 +55,10 @@ import SearchBar from 'react-native-general-searchbar';
 
 有几个属性来控制组件的行为:
 
-* `autoFocus: boolean`: 内部`TextInput`组件自动Focus与否.
-* `searchText: string`: 当前展示的文本.
+* `autoFocus?: boolean`: 内部`TextInput`组件自动Focus与否.
+* `searchText?: string`: 当前展示的文本.
 * `placeholder: string`: 占位文本.
+* `placeholderTextColor: string`: 占位文本颜色.
 * `canCancel: boolean`: 有没有取消按钮.
 * `cancelText: string`: 取消按钮文本.
 * `canClear: boolean`: 有没有清空输入按钮.

@@ -1,65 +1,50 @@
 import React from 'react';
-import { View, TouchableOpacity,Text, StyleSheet, Keyboard, Image, TextInput } from 'react-native';
-import PropTypes from 'prop-types';
+import { View, TouchableOpacity, Text, StyleSheet, Keyboard, Image, TextInput } from 'react-native';
 
-export default class extends React.Component {
-    static propTypes = {
-        autoFocus: PropTypes.bool,
-        searchText: PropTypes.string,
-        placeholder: PropTypes.string,
-        canCancel: PropTypes.bool,
-        cancelText: PropTypes.string,
-        canClear: PropTypes.bool,
-        isSearching: PropTypes.bool,
-        onPressCancel: PropTypes.func,
-        onSubmitEditing: PropTypes.func,
-        onChangeText: PropTypes.func,
-        textInputProps: PropTypes.any,
-        style: PropTypes.any,
+export default class extends React.PureComponent {
+    static defaultProps = {
+        autoFocus: false,
+        searchText: '',
+        placeholder: '搜索',
+        placeholderTextColor: '#999999',
+        canCancel: false,
+        cancelText: '取消',
+        canClear: false,
+        isSearching: true,
     };
 
-    static get defaultProps() {
-        return {
-            autoFocus: false,
-            searchText: '',
-            placeholder: '',
-            canCancel: false,
-            cancelText: '取消',
-            canClear: false,
-            isSearching: true,
-        };
-    }
-
     _onTextChange = (text) => {
-        this.props.onChangeText && this.props.onChangeText(text);
+        const {onChangeText} = this.props;
+        onChangeText && onChangeText(text);
     };
 
     _renderSearchImage = () => {
         return (
             <Image
-                source={require('../image/search.png')}
+                source={require('./image/search.png')}
                 style={styles.searchImage}
             />
         );
     };
 
     _renderTextInput = () => {
+        const {placeholder, placeholderTextColor, textInputProps, onSubmitEditing, autoFocus, searchText} = this.props;
         return (
             <TextInput
                 ref={(ref) => this.searchInput = ref}
                 style={styles.searchInput}
-                placeholder={this.props.placeholder || '搜索'}
-                placeholderTextColor='#999999'
+                placeholder={placeholder}
+                placeholderTextColor={placeholderTextColor}
                 returnKeyType='search'
-                onSubmitEditing={this.props.onSubmitEditing}
-                autoFocus={this.props.autoFocus}
-                value={this.props.searchText}
+                onSubmitEditing={onSubmitEditing}
+                autoFocus={autoFocus}
+                value={searchText}
                 onChangeText={this._onTextChange}
-                onFocus={() => this._onTextChange(this.props.searchText)}
+                onFocus={() => this._onTextChange(searchText)}
                 autoCorrect={false}
                 clearButtonMode="never"
                 underlineColorAndroid="transparent"
-                {...this.props.textInputProps}
+                {...textInputProps}
             />
         );
     };
@@ -71,7 +56,7 @@ export default class extends React.Component {
                 onPress={() => this._onTextChange('')}
             >
                 <Image
-                    source={require('../image/search_empty.png')}
+                    source={require('./image/search_empty.png')}
                     style={styles.searchEmpty}
                 />
             </TouchableOpacity>
@@ -79,26 +64,28 @@ export default class extends React.Component {
     };
 
     _renderCancelButton = () => {
+        const {cancelText, onPressCancel} = this.props;
         return (
             <TouchableOpacity
                 style={styles.cancelContainer}
                 onPress={() => {
                     Keyboard.dismiss();
-                    this.props.onPressCancel && this.props.onPressCancel();
+                    onPressCancel && onPressCancel();
                 }}
             >
                 <Text style={styles.cancelText}>
-                    {this.props.cancelText}
+                    {cancelText}
                 </Text>
             </TouchableOpacity>
         );
     };
 
     render() {
-        const hasClear = this.props.canClear && this.props.isSearching;
-        const hasCancel = this.props.canCancel && this.props.isSearching;
+        const {canCancel, canClear, isSearching, style} = this.props;
+        const hasClear = canClear && isSearching;
+        const hasCancel = canCancel && isSearching;
         return (
-            <View style={[styles.headerContainer, this.props.style]}>
+            <View style={[styles.headerContainer, style]}>
                 <View style={styles.inputContainer}>
                     {this._renderSearchImage()}
                     {this._renderTextInput()}

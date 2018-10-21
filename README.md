@@ -1,10 +1,30 @@
 # react-native-general-searchbar
 
-[Chinese README](README-zh_CN.md)
-
-[ScreenShots](resource/ScreenShot.md)
+[中文说明](README-zh_CN.md)
 
 A general search bar and clickable fake search bar.
+
+## ScreenShots
+
+### iPhoneX ( SearchBar + FakeSearchBar)
+
+<p float="left">
+
+<img src="/resource/SearchBar-iPhoneX.png" width="25%">
+
+<img src="/resource/FakeSearchBar-iPhoneX.png" width="25%">
+
+</p>
+
+### Android ( SearchBar + FakeSearchBar)
+
+<p float="left">
+
+<img src="/resource/SearchBar-Android.jpeg" width="25%">
+
+<img src="/resource/FakeSearchBar-Android.jpeg" width="25%">
+
+</p>
 
 ## Install
 
@@ -19,6 +39,11 @@ Install by NPM:
 ```shell
 npm install --save react-native-general-searchbar
 ```
+
+You should also install the package in `peerDependencies`:
+
+* react
+* react-native
 
 ## Usage
 
@@ -35,6 +60,7 @@ It has several properties to control its behavior:
 * `autoFocus?: boolean`: Inner `TextInput` component will auto focus or not.
 * `searchText?: string`: Current text display.
 * `placeholder?: string`: Placeholder text.
+* `placeholderTextColor: string`: Placeholder text color.
 * `canCancel?: boolean`: Has cancel button or not.
 * `cancelText?: string`: Cancel button text.
 * `canClear?: boolean`: Has clear input button or not.
