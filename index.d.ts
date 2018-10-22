@@ -10,17 +10,15 @@ import {
     TextInputSubmitEditingEventData
 } from 'react-native';
 
-export interface FakeSearchBarProps {
-    placeholder?: string,
-    onFocus?: () => void,
-    image?: ImageSourcePropType,
-    activeOpacity?: number,
-    touchStyle?: StyleProp<ViewStyle>,
-    imageStyle?: StyleProp<ImageStyle>,
-    textStyle?: StyleProp<TextStyle>,
-}
-
-export class FakeSearchBar extends React.PureComponent<FakeSearchBarProps> {
+export interface SearchBarStyle {
+    view?: StyleProp<ViewStyle>,
+    inputView?: StyleProp<ViewStyle>,
+    searchImage?: StyleProp<ImageStyle>,
+    searchInput?: StyleProp<TextStyle>,
+    searchEmptyTouch?: StyleProp<ViewStyle>,
+    searchEmptyImage?: StyleProp<ImageStyle>,
+    cancelTouch?: StyleProp<ViewStyle>,
+    cancelText?: StyleProp<TextStyle>,
 }
 
 export interface SearchBarProps {
@@ -33,13 +31,30 @@ export interface SearchBarProps {
     canClear?: boolean,
     isSearching?: boolean,
     onPressCancel?: () => void,
-    onSubmitEditing?: (
-        e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
-    ) => void,
+    onSubmitEditing?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void,
     onChangeText?: (text?: string) => void,
     textInputProps?: TextInputProps,
-    style?: StyleProp<ViewStyle>,
+    style?: SearchBarStyle,
 }
 
 export default class SearchBar extends React.PureComponent<SearchBarProps> {
+    static style: SearchBarStyle;
+}
+
+export interface FakeSearchBarStyle {
+    touch?: StyleProp<ViewStyle>,
+    image?: StyleProp<ImageStyle>,
+    text?: StyleProp<TextStyle>,
+}
+
+export interface FakeSearchBarProps {
+    placeholder?: string,
+    onFocus?: () => void,
+    image?: ImageSourcePropType,
+    activeOpacity?: number,
+    style?: FakeSearchBarStyle,
+}
+
+export class FakeSearchBar extends React.PureComponent<FakeSearchBarProps> {
+    static style: SearchBarStyle;
 }

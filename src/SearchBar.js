@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Keyboard, Image, TextInput } from 'react-native';
+import { View, TouchableOpacity, Text, Keyboard, Image, TextInput } from 'react-native';
+import styles from './SearchBarStyle';
 
-export default class extends React.PureComponent {
+export default class SearchBar extends React.PureComponent {
+    static style = {};
+
     static defaultProps = {
         autoFocus: false,
         searchText: '',
@@ -11,18 +14,20 @@ export default class extends React.PureComponent {
         cancelText: '取消',
         canClear: false,
         isSearching: true,
+        style: {},
     };
 
+    _mergeStyle = (key) => [styles[key], SearchBar.style[key], this.props.style[key]];
+
     _onTextChange = (text) => {
-        const {onChangeText} = this.props;
-        onChangeText && onChangeText(text);
+        this.props.onChangeText && this.props.onChangeText(text);
     };
 
     _renderSearchImage = () => {
         return (
             <Image
                 source={require('./image/search.png')}
-                style={styles.searchImage}
+                style={this._mergeStyle('searchImage')}
             />
         );
     };
@@ -32,7 +37,7 @@ export default class extends React.PureComponent {
         return (
             <TextInput
                 ref={(ref) => this.searchInput = ref}
-                style={styles.searchInput}
+                style={this._mergeStyle('searchInput')}
                 placeholder={placeholder}
                 placeholderTextColor={placeholderTextColor}
                 returnKeyType='search'
@@ -52,12 +57,12 @@ export default class extends React.PureComponent {
     _renderClearButton = () => {
         return (
             <TouchableOpacity
-                style={styles.emptyInputContainer}
+                style={this._mergeStyle('searchEmptyTouch')}
                 onPress={() => this._onTextChange('')}
             >
                 <Image
                     source={require('./image/search_empty.png')}
-                    style={styles.searchEmpty}
+                    style={this._mergeStyle('searchEmptyImage')}
                 />
             </TouchableOpacity>
         );
@@ -67,13 +72,13 @@ export default class extends React.PureComponent {
         const {cancelText, onPressCancel} = this.props;
         return (
             <TouchableOpacity
-                style={styles.cancelContainer}
+                style={this._mergeStyle('cancelTouch')}
                 onPress={() => {
                     Keyboard.dismiss();
                     onPressCancel && onPressCancel();
                 }}
             >
-                <Text style={styles.cancelText}>
+                <Text style={this._mergeStyle('cancelText')} numberOfLines={1}>
                     {cancelText}
                 </Text>
             </TouchableOpacity>
@@ -85,8 +90,8 @@ export default class extends React.PureComponent {
         const hasClear = canClear && isSearching;
         const hasCancel = canCancel && isSearching;
         return (
-            <View style={[styles.headerContainer, style]}>
-                <View style={styles.inputContainer}>
+            <View style={this._mergeStyle('view')}>
+                <View style={this._mergeStyle('inputView')}>
                     {this._renderSearchImage()}
                     {this._renderTextInput()}
                     {hasClear && this._renderClearButton()}
@@ -96,52 +101,3 @@ export default class extends React.PureComponent {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    headerContainer: {
-        height: 50,
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        alignItems: 'center',
-    },
-    inputContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        marginLeft: 8,
-        marginRight: 8,
-        height: 35,
-        backgroundColor: '#e6e8ea',
-        alignItems: 'center',
-        borderRadius: 10,
-    },
-    searchImage: {
-        marginLeft: 10,
-        width: 16,
-        height: 16,
-    },
-    searchInput: {
-        padding: 0,
-        marginLeft: 6,
-        fontSize: 15,
-        color: '#333333',
-        flex: 1,
-    },
-    emptyInputContainer: {
-        width: 34,
-        height: 27,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    searchEmpty: {
-        width: 14,
-        height: 14,
-    },
-    cancelContainer: {
-        width: 62,
-        alignItems: 'center',
-    },
-    cancelText: {
-        fontSize: 16,
-        color: '#999999',
-    },
-});

@@ -1,60 +1,37 @@
 import React from 'react';
 import { TouchableOpacity, Image, Text, StyleSheet } from 'react-native';
+import styles from './FakeSearchBarStyle';
 
-export default class extends React.PureComponent {
+export default class FakeSearchBar extends React.PureComponent {
+    static style = {};
+
     static defaultProps = {
-        image: require('./image/input_search.png'),
+        placeholder: '搜索',
         activeOpacity: 0.9,
+        style: {},
     };
+
+    _mergeStyle = (key) => [styles[key], FakeSearchBar.style[key], this.props.style[key]];
 
     render() {
         const {
             placeholder,
-            image,
+            image = require('./image/input_search.png'),
             onFocus,
             activeOpacity,
-            touchStyle,
-            imageStyle,
-            textStyle
+            style
         } = this.props;
         return (
             <TouchableOpacity
                 onPress={onFocus}
-                style={[styles.touch, touchStyle]}
+                style={this._mergeStyle('touch')}
                 activeOpacity={activeOpacity}
             >
-                <Image
-                    source={image}
-                    style={[styles.image, imageStyle]}
-                />
-                <Text style={[styles.text, textStyle]}>
+                <Image source={image} style={this._mergeStyle('image')} />
+                <Text style={this._mergeStyle('text')} numberOfLines={1}>
                     {placeholder}
                 </Text>
             </TouchableOpacity>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    touch: {
-        flex: 1,
-        height: 35,
-        marginLeft: 16,
-        marginRight: 8,
-        borderRadius: 10,
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#e8e8ea',
-    },
-    image: {
-        marginLeft: 10,
-        width: 16,
-        height: 16,
-    },
-    text: {
-        marginLeft: 6,
-        fontSize: 15,
-        color: '#999999',
-        flex: 1
-    },
-});

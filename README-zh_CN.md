@@ -67,7 +67,7 @@ import SearchBar from 'react-native-general-searchbar';
 * `onSubmitEditing?: (event) => void`: 当提交编辑文本时的回调方法.
 * `onChangeText?: (text: string) => void`: 当前输入文本改变的回调方法.
 * `textInputProps?: any`: 内部`TextInput`组件的属性.
-* `style?: any`: 外部视图样式.
+* `style?: SearchBarStyle`: 自定义样式.
 
 ### FakeSearchBar
 
@@ -75,6 +75,35 @@ import SearchBar from 'react-native-general-searchbar';
 
 ```javascript
 import { FakeSearchBar } from 'react-native-general-searchbar';
+```
+
+属性:
+
+* `placeholder?: string`: 占位文本.
+* `onFocus?: () => void`: 点击回调事件.
+* `image?: any`: 搜索图标.
+* `activeOpacity?: number`: `TouchableOpacity`的`activeOpacity`属性.
+* `style?: FakeSearchBarStyle`: 自定义样式.
+
+### 全局样式
+
+你可以全局的设置统一样式, 这会覆盖默认设置. 例如:
+
+```javascript
+// SearchBarStyle in index.d.ts
+SearchBar.style = {
+    inputView: {
+        ...
+    },
+    ...
+};
+// FakeSearchBar in index.d.ts
+FakeSearchBar.style = {
+    touch: {
+        ...
+    },
+    ...
+}
 ```
 
 属性:

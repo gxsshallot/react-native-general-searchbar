@@ -69,7 +69,7 @@ It has several properties to control its behavior:
 * `onSubmitEditing?: (event) => void`: Callback when submit current editing text.
 * `onChangeText?: (text: string) => void`: Current text changed callback.
 * `textInputProps?: any`: Inner `TextInput` component properties.
-* `style?: any`: Style of outter view.
+* `style?: SearchBarStyle`: Custom style.
 
 ### FakeSearchBar
 
@@ -82,12 +82,31 @@ import { FakeSearchBar } from 'react-native-general-searchbar';
 Properties:
 
 * `placeholder?: string`: Placeholder text.
-* `onFocus?: () => void`: Callback when click,
+* `onFocus?: () => void`: Callback when click.
 * `image?: any`: Search image.
 * `activeOpacity?: number`: `activeOpacity` of `TouchableOpacity`.
-* `touchStyle?: any`: Out `TouchableOpacity` style.
-* `imageStyle?: any`: Search image style.
-* `textStyle?: any`: Placeholder text style.
+* `style?: FakeSearchBarStyle`: Custom style.
+
+### Global Style
+
+You can change their styles globally. It will override default settings. For example:
+
+```javascript
+// SearchBarStyle in index.d.ts
+SearchBar.style = {
+    inputView: {
+        ...
+    },
+    ...
+};
+// FakeSearchBar in index.d.ts
+FakeSearchBar.style = {
+    touch: {
+        ...
+    },
+    ...
+}
+```
 
 ## Reference
 
