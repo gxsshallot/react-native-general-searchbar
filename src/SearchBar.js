@@ -17,7 +17,7 @@ export default class SearchBar extends React.PureComponent {
         style: {},
     };
 
-    _mergeStyle = (key) => [styles[key], SearchBar.style[key], this.props.style[key]];
+    _mergeStyle = (key) => [SearchBar.style[key] || styles[key], this.props.style[key]];
 
     _onTextChange = (text) => {
         this.props.onChangeText && this.props.onChangeText(text);

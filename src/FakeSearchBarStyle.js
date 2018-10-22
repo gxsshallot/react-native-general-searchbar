@@ -4,9 +4,10 @@ export default StyleSheet.create({
     touch: {
         flex: 1,
         height: 35,
-        marginLeft: 16,
+        marginLeft: 8,
         marginRight: 8,
-        borderRadius: 10,
+        borderRadius: 5,
+        overflow: 'hidden',
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#e8e8ea',

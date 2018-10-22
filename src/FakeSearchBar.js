@@ -11,7 +11,7 @@ export default class FakeSearchBar extends React.PureComponent {
         style: {},
     };
 
-    _mergeStyle = (key) => [styles[key], FakeSearchBar.style[key], this.props.style[key]];
+    _mergeStyle = (key) => [FakeSearchBar.style[key] || styles[key], this.props.style[key]];
 
     render() {
         const {
