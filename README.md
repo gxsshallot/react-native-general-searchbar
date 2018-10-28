@@ -79,7 +79,7 @@ Properties:
 * `placeholder`: Placeholder text.
 * `onFocus`: Callback when click.
 * `image`: Search image.
-* `activeOpacity`: `activeOpacity` of `TouchableOpacity`.
+* `activeOpacity`: Property of `TouchableOpacity`.
 * `style`: Custom style.
 
 ### Global Style
