@@ -10,8 +10,9 @@
     "url": "https://github.com/gaoxiaosong/react-native-general-searchbar.git"
   },
   "keywords": [
-    "React-Native",
-    "SearchBar"
+    "react native",
+    "search bar",
+    "fake search bar"
   ],
   "author": "Xiaosong Gao",
   "license": "MIT",

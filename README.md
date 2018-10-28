@@ -1,12 +1,12 @@
 # react-native-general-searchbar
 
-[中文说明](README-zh_CN.md)
+[![npm version](https://img.shields.io/npm/v/react-native-general-searchbar.svg?style=flat)](https://www.npmjs.com/package/react-native-general-searchbar)
 
 A general search bar and clickable fake search bar.
 
 ## ScreenShots
 
-### iPhoneX ( SearchBar + FakeSearchBar)
+### iPhoneX
 
 <p float="left">
 
@@ -16,7 +16,7 @@ A general search bar and clickable fake search bar.
 
 </p>
 
-### Android ( SearchBar + FakeSearchBar)
+### Android
 
 <p float="left">
 
@@ -40,11 +40,6 @@ Install by NPM:
 npm install --save react-native-general-searchbar
 ```
 
-You should also install the package in `peerDependencies`:
-
-* react
-* react-native
-
 ## Usage
 
 ### SearchBar
@@ -57,19 +52,19 @@ import SearchBar from 'react-native-general-searchbar';
 
 It has several properties to control its behavior:
 
-* `autoFocus?: boolean`: Inner `TextInput` component will auto focus or not.
-* `searchText?: string`: Current text display.
-* `placeholder?: string`: Placeholder text.
-* `placeholderTextColor?: string`: Placeholder text color.
-* `canCancel?: boolean`: Has cancel button or not.
-* `cancelText?: string`: Cancel button text.
-* `canClear?: boolean`: Has clear input button or not.
-* `isSearching?: boolean`: Is in searching status or not.
-* `onPressCancel?: () => void`: Cancel button callback.
-* `onSubmitEditing?: (event) => void`: Callback when submit current editing text.
-* `onChangeText?: (text: string) => void`: Current text changed callback.
-* `textInputProps?: any`: Inner `TextInput` component properties.
-* `style?: SearchBarStyle`: Custom style.
+* `autoFocus`: Inner `TextInput` component will auto focus or not.
+* `searchText`: Current text display.
+* `placeholder`: Placeholder text.
+* `placeholderTextColor`: Placeholder text color.
+* `canCancel`: Has cancel button or not.
+* `cancelText`: Cancel button text.
+* `canClear`: Has clear input button or not.
+* `isSearching`: Is in searching status or not.
+* `onPressCancel`: Cancel button callback.
+* `onSubmitEditing`: Callback when submit current editing text.
+* `onChangeText`: Current text changed callback.
+* `textInputProps`: Inner `TextInput` component properties.
+* `style`: Custom style.
 
 ### FakeSearchBar
 
@@ -81,11 +76,11 @@ import { FakeSearchBar } from 'react-native-general-searchbar';
 
 Properties:
 
-* `placeholder?: string`: Placeholder text.
-* `onFocus?: () => void`: Callback when click.
-* `image?: any`: Search image.
-* `activeOpacity?: number`: `activeOpacity` of `TouchableOpacity`.
-* `style?: FakeSearchBarStyle`: Custom style.
+* `placeholder`: Placeholder text.
+* `onFocus`: Callback when click.
+* `image`: Search image.
+* `activeOpacity`: `activeOpacity` of `TouchableOpacity`.
+* `style`: Custom style.
 
 ### Global Style
 
@@ -107,7 +102,3 @@ FakeSearchBar.style = {
     ...
 }
 ```
-
-## Reference
-
-Please see this repository: [react-native-items](https://github.com/gaoxiaosong/react-native-items).
