@@ -6,7 +6,7 @@ export default class FakeSearchBar extends React.PureComponent {
     static style = {};
 
     static defaultProps = {
-        placeholder: '搜索',
+        placeholder: 'Search',
         activeOpacity: 0.9,
         style: {},
     };

@@ -8,10 +8,10 @@ export default class SearchBar extends React.PureComponent {
     static defaultProps = {
         autoFocus: false,
         searchText: '',
-        placeholder: '搜索',
+        placeholder: 'Search',
         placeholderTextColor: '#999999',
         canCancel: false,
-        cancelText: '取消',
+        cancelText: 'Cancel',
         canClear: false,
         isSearching: true,
         style: {},
